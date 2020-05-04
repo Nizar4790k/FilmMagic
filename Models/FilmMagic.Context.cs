@@ -29,7 +29,7 @@ namespace FilmMagic.Models
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Devolucion> Devoluciones { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+      
         public virtual DbSet<Usuario> Usuarios { get; set; }
     }
 }
