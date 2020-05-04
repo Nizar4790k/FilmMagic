@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FilmMagicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Alquiler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="CantidadAlquilada" Type="Int32" Nullable="false" />
+    <Property Name="FechaInicial" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaFinal" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PrecioUnitarioProducto" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="TotalItbis" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="SubTotal" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK__Alquiler__IdClie__03F0984C" FromRole="Alquiler" ToRole="Cliente" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK__Alquiler__IdProd__04E4BC85" FromRole="Alquiler" ToRole="Producto" />
+    <NavigationProperty Name="Devolucion" Relationship="Self.FK__Devolucio__IdAlq__08B54D69" FromRole="Alquiler" ToRole="Devolucion" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cedula" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Alquiler" Relationship="Self.FK__Alquiler__IdClie__03F0984C" FromRole="Cliente" ToRole="Alquiler" />
+  </EntityType>
+  <EntityType Name="Devolucion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdAlquiler" Type="Int32" Nullable="false" />
+    <Property Name="MontoPorAtraso" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="NotaAtraso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Alquiler" Relationship="Self.FK__Devolucio__IdAlq__08B54D69" FromRole="Devolucion" ToRole="Alquiler" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="Extento" Type="Boolean" Nullable="false" />
+    <Property Name="Estado" Type="Boolean" Nullable="false" />
+    <Property Name="CantidadEnStock" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Alquiler" Relationship="Self.FK__Alquiler__IdProd__04E4BC85" FromRole="Producto" ToRole="Alquiler" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Clave" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Alquiler__IdClie__03F0984C">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Alquiler">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Alquiler__IdProd__04E4BC85">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Alquiler">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Devolucio__IdAlq__08B54D69">
+    <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="1" />
+    <End Role="Devolucion" Type="Self.Devolucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Alquiler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Devolucion">
+        <PropertyRef Name="IdAlquiler" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FilmMagicEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alquiler" EntityType="Self.Alquiler" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Devolucion" EntityType="Self.Devolucion" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK__Alquiler__IdClie__03F0984C" Association="Self.FK__Alquiler__IdClie__03F0984C">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Alquiler" EntitySet="Alquiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Alquiler__IdProd__04E4BC85" Association="Self.FK__Alquiler__IdProd__04E4BC85">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Alquiler" EntitySet="Alquiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Devolucio__IdAlq__08B54D69" Association="Self.FK__Devolucio__IdAlq__08B54D69">
+      <End Role="Alquiler" EntitySet="Alquiler" />
+      <End Role="Devolucion" EntitySet="Devolucion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

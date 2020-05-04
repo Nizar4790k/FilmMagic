@@ -1,0 +1,14 @@
+D:\Documentos\Visual Studio Projects\FilmMagic\obj\Debug\FilmMagic.csprojAssemblyReference.cache
+D:\Documentos\Visual Studio Projects\FilmMagic\obj\Debug\FilmMagic.Properties.Resources.resources
+D:\Documentos\Visual Studio Projects\FilmMagic\obj\Debug\FilmMagic.Views.Cliente.AgregarOActualizar.resources
+D:\Documentos\Visual Studio Projects\FilmMagic\obj\Debug\FilmMagic.csproj.GenerateResource.cache
+D:\Documentos\Visual Studio Projects\FilmMagic\bin\Debug\FilmMagic.exe.config
+D:\Documentos\Visual Studio Projects\FilmMagic\bin\Debug\FilmMagic.exe
+D:\Documentos\Visual Studio Projects\FilmMagic\bin\Debug\FilmMagic.pdb
+D:\Documentos\Visual Studio Projects\FilmMagic\bin\Debug\EntityFramework.dll
+D:\Documentos\Visual Studio Projects\FilmMagic\bin\Debug\EntityFramework.SqlServer.dll
+D:\Documentos\Visual Studio Projects\FilmMagic\bin\Debug\EntityFramework.xml
+D:\Documentos\Visual Studio Projects\FilmMagic\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documentos\Visual Studio Projects\FilmMagic\obj\Debug\FilmMagic.csproj.CopyComplete
+D:\Documentos\Visual Studio Projects\FilmMagic\obj\Debug\FilmMagic.exe
+D:\Documentos\Visual Studio Projects\FilmMagic\obj\Debug\FilmMagic.pdb

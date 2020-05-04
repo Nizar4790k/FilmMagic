@@ -17,7 +17,7 @@ namespace FilmMagic.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Alquiler()
         {
-            this.Devolucions = new HashSet<Devolucion>();
+            this.Devolucion = new HashSet<Devolucion>();
         }
     
         public int Id { get; set; }
@@ -33,6 +33,6 @@ namespace FilmMagic.Models
         public virtual Cliente Cliente { get; set; }
         public virtual Producto Producto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Devolucion> Devolucions { get; set; }
+        public virtual ICollection<Devolucion> Devolucion { get; set; }
     }
 }
