@@ -13,10 +13,10 @@ namespace FilmMagic.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FilmMagicEntities1 : DbContext
+    public partial class FilmMagicEntities : DbContext
     {
-        public FilmMagicEntities1()
-            : base("name=FilmMagicEntities1")
+        public FilmMagicEntities()
+            : base("name=FilmMagicEntities")
         {
         }
     
@@ -25,10 +25,11 @@ namespace FilmMagic.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Alquiler> Alquilers { get; set; }
+        public virtual DbSet<Alquiler> Alquileres { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
-        public virtual DbSet<Devolucion> Devolucions { get; set; }
-        public virtual DbSet<Producto> Productoes { get; set; }
+        public virtual DbSet<Devolucion> Devoluciones { get; set; }
+        public virtual DbSet<Producto> Productos { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
     }
 }

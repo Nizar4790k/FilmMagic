@@ -4,15 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4f787aabc6a8477f8694feab02edd4a4" Name="Diagram1">
+      <Diagram DiagramId="19ec32a32bb4467f9cd6becd685666e9" Name="Diagram1">
         <EntityTypeShape EntityType="FilmMagicModel.Alquiler" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="FilmMagicModel.Cliente" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FilmMagicModel.Devolucion" Width="1.5" PointX="5.625" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmMagicModel.Devolucion" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="FilmMagicModel.Producto" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FilmMagicModel.Usuario" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="FilmMagicModel.FK__Alquiler__IdClie__6477ECF3" ManuallyRouted="false" />
-        <AssociationConnector Association="FilmMagicModel.FK__Alquiler__IdProd__656C112C" ManuallyRouted="false" />
-        <AssociationConnector Association="FilmMagicModel.FK__Devolucio__IdAlq__693CA210" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FilmMagicModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FilmMagicModel.Usuario" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="FilmMagicModel.FK__Alquiler__IdClie__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="FilmMagicModel.FK__Alquiler__IdProd__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="FilmMagicModel.FK__Devolucio__IdAlq__08B54D69" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
